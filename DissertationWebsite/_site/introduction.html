@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Yekta Amirkhalili">
+<meta name="dcterms.date" content="2025-06-19">
 
-<title>About – Yekta’s Dissertation</title>
+<title>Introduction – Yekta’s Dissertation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +22,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -34,6 +56,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-8ef56b68f8fa1e9d2ba328e99e439f80.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
@@ -71,6 +94,49 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -259,7 +325,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" aria-current="page"> 
+    <a class="nav-link" href="./about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -277,54 +343,158 @@ ul.task-list li input[type="checkbox"] {
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
 <p><img src="./images/uw-logo.png" class="img-fluid"></p>
 </div></div>
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-  <ul>
-  <li><a href="#about-me" id="toc-about-me" class="nav-link active" data-scroll-target="#about-me">About Me</a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
-<div class="quarto-about-marquee">
-  <div class="about-image-container">
-  </div>
-  <div class="about-contents">
-    <header id="title-block-header" class="quarto-title-block default">
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">About</h1>
+<h1 class="title">Introduction</h1>
 </div>
+
+
+
 <div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Yekta Amirkhalili </p>
+          </div>
   </div>
-</header> <main class="content" id="quarto-document-content">
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">June 19, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
 
 
-<section id="about-me" class="level2">
-<h2 data-anchor-id="about-me">About Me</h2>
-<p>Hi! My Name is Yekta (read exactly how you write it), my pronouns are She/Her. I was born in Tehran, Iran. Since I was a kid, I’ve always loved learning and adventures. Movies are my first passion! After that, it’s TV shows, music, gadgets and technology, books, writing and studying! Yes! I actually like studying!</p>
-<p>I quickly found out I was much better at Math and Physics than Science and any other field that required memorizing facts (History). I wanted to be an astronaut, then an actress, then a filmmaker, then a writer, then a super model (plans didn’t work out, I stopped growing taller at 14!), then a robotics engineer, then a computer engineer, then an electrical engineer, then a photographer, etc. I thought actor was the one that made the most sense, since I wanted to be so many things! At least with acting, I could pretend to be all of those things!</p>
-<p>Well, I chose mathematics in highschool, and since I was good at it, I continued with mathematics to college. Big Mistake (For Me)! Studying math in undergrad at University of Tehran was like studying Chinese, Greek, Russian and Arabic at the same time. You don’t see numbers after Calculus 2, which you take in the second semester/term. All abstract ideas, proofs, theorems, n-dimensional spaces and curves that curve inside of themselves! “I should have studied Accounting!” (Which I did, btw! I actually took an entire accounting training course outside of university and found it to be sould-crushingly boring, no offense to all accountants.)</p>
-<p>Ok, so if math isn’t about numbers and I don’t actually want to work with numbers - then where do I go?! So, thankfully, at UT, I was able to take most of my electives courses from the two other majors in the math department: computer science and statistics. This was the turning point for me. “Here’s where that theory applies, you know, the one you kept asking why you’re even learning its proof”… So I figured I should change my major. Mathematics had taught me nothing but how to think, how to analyze, how to be logical and how important it was to know why stuff made sense… so really, nothing much! I didn’t even realize how much studying mathematics had taught me until years later.</p>
-<p>I still changed my major for graduate school, and decided to try Industrial &amp; Systems Engineering, with a specialization on Macrosystems engineering. I taught myself Python and SQL, I did very well during graduate school with my courses, I worked on research projects and had the best time writing my thesis. So I thought, wow, I actually like all of this! Why not do a PhD? And here I am! I love learning, getting deep in a topic, planning a project from the start to the end.</p>
+</header>
+
+
+<style>
+p {
+  text-align: justify;
+}
+</style>
+<p>The proliferation of Mobile banking, referred to in this project as m-banking, has transformed financial services, enabling consumers to conduct transactions conveniently through mobile devices. Despite the advantages, m-banking adoption rates vary significantly. Adoption is the early stage usage or uptake of a technology. My dissertation aims to bridge critical gaps in understanding how different factors (according to literature trends and through novel contributions) and device-specific attributes shape m-banking adoption. The central research question addressed in this dissertation is: “What are the factors that influence mobile banking adoption across different user segments?”</p>
+<p>The current chapter is a holistic introduction to the dissertation. To answer the main research question, I conducted three distinct yet interconnected studies. These studies, presented in chronological order in the following chapters, are:</p>
+<ol type="1">
+<li>The Inner Workings of Mobile Banking Adoption: A Systematic Literature Review of Intrinsic Factors — An SLR study of a specific group of adoption factors defined for the first time in this study as “intrinsic factors”.</li>
+<li>The Relationship Between Mental Health and Mobile Banking Adoption: Evidence from Canada — An analysis of the impact of mental health and related psychological factors on m-banking adoption.</li>
+<li>The Device Divide: Unpacking Mobile Banking Adoption Differences for Smartphones and Smart Wearable Devices — An investigation into the role of device type (smartphone vs.&nbsp;smart wearable) in shaping adoption behaviors.</li>
+</ol>
+<p><strong>Theoretical Contributions</strong></p>
+<p>This dissertation makes several contributions to the field of technology adoption and financial services research.</p>
+<ol type="1">
+<li>My research extends the understanding of factors in m-banking adoption by providing a useful categorization in two levels.</li>
+<li>My research is the first to look at mental health and its related concepts in m-banking adoption, integrating mental health considerations into behavioral technology models.</li>
+<li>My research is the first to consider device differences in a comparative setting in m-banking, specifically looking at smartphone and smart wearable devices. The results show that device impacts Trust, Perceived Security, and Perceived Value of m-banking. Therefore, even established theoretical frameworks such as the utaut <span class="citation" data-cites="venkatesh2000theoretical">Venkatesh &amp; Davis (<a href="#ref-venkatesh2000theoretical" role="doc-biblioref">2000</a>)</span> and tam <span class="citation" data-cites="davisUserAcceptanceComputer1989a">Davis et al. (<a href="#ref-davisUserAcceptanceComputer1989a" role="doc-biblioref">1989</a>)</span> could be improved by integrating device specific measures.</li>
+</ol>
+<p><strong>Practical Contributions</strong></p>
+<ol type="1">
+<li>I use text-mining techniques to extract topics and classify articles in a systematic literature review study, providing a structured approach for future research.</li>
+<li>I conduct a comparative study, the first of its kind, between different devices and their impact on m-banking adoption factors. For Practical Contributions, the insights from this dissertation help financial institutions as well as researchers on many frontiers.</li>
+<li>The results of <a href="study1.html">the first study</a> could be used as a reference for future scholars to conduct more directed research by finding context-specific theories, factors and methodologies.</li>
+<li>I highlight various gaps in the literature and offer suggestions for future researchers.</li>
+<li>My categorization of adoption factors helps clarify these latent ideas, improving understanding for both practitioners and researchers.</li>
+<li>The results from Chapter <a href="study2.html">the second study</a> show that Social Media is one of the best platforms for marketing for banks.</li>
+<li>From the same study, I highlight the various ways banks could promote and engage consumers with various mental health concerns.</li>
+<li>From the results of Chapter <a href="study3.html">the third study</a>, I offer actionable strategies for financial institutions to tailor their digital banking services based on device-specific adoption behaviors.</li>
+</ol>
+<section id="the-inner-workings-of-mobile-banking-adoption-a-systematic-literature-review-of-intrinsic-factors" class="level3" data-number="0.1">
+<h3 data-number="0.1" class="anchored" data-anchor-id="the-inner-workings-of-mobile-banking-adoption-a-systematic-literature-review-of-intrinsic-factors"><span class="header-section-number">0.1</span> The Inner Workings of Mobile Banking Adoption: A Systematic Literature Review of Intrinsic Factors</h3>
+<p>Despite extensive research on m-banking adoption, a clear framework categorizing user-specific influences is still missing.<br>
+After investigating the m-banking adoption literature, I found that uniform definitions for factors <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> influencing m-banking adoption was lacking. Furthermore, there was an over-reliance on only a few factors and theoretical frameworks. This prompted the undertaking of the SLR study in <a href="study1.html">study 1</a>. To address the problem of lack of uniform definitions, I categorized adoption factors based on context and impact. This way, using group/category membership help identify similarities between factors. Thus making definitions more cohesive.</p>
+<p>Several studies support the idea that categorization helps in defining and understanding concepts more easily. Research suggests that categorization plays a crucial role in defining concepts, moving from a classical view (fixed definitions) to a probabilistic view where categorization helps in making sense of concepts based on shared characteristics <span class="citation" data-cites="medinConceptsConceptualStructure1989">Medin (<a href="#ref-medinConceptsConceptualStructure1989" role="doc-biblioref">1989</a>)</span>. Categorization enables more effective organization and processing of information which are essential for learning new concepts <span class="citation" data-cites="zentallCATEGORIZATIONCONCEPTLEARNING2002">(<a href="#ref-zentallCATEGORIZATIONCONCEPTLEARNING2002" role="doc-biblioref"><strong>zentallCATEGORIZATIONCONCEPTLEARNING2002?</strong></a>)</span>.</p>
+<p>Technology adoption factors are complex and often belong to multiple categories. Because of this, studies have never explicitly categorized factors across the board. I adopt a broad approach to classifying factors, focusing on two key dimensions of decision-making based on how they relate to the user: Intrinsic and Extrinsic. In the context of m-banking adoption, intrinsic factors discuss how individuals evaluate an m-banking application (Often shortened to “app”) internally — based on perceptions, goals, pressure felt from other people’s judgment, and emotions. Extrinsic factors, on the other hand, refer to the apps’ measurable features, such as performance and functionality. Since extrinsic factors are easy to quantify and experienced similarly across the board, they are also straightforward to study. Thus, I focused on intrinsic factors. Because intrinsic factors relate to so many different inner processes (mentioned above), I further categorized them into four main groups:</p>
+<ol type="1">
+<li><strong>Perceptive</strong>, which are based on beliefs and perceptions.</li>
+<li><strong>Personal</strong>, which are based on individual motivations and traits.</li>
+<li><strong>Social</strong>, which are based on the impact of others on the decision-maker.</li>
+<li><strong>Psychological</strong>, which are based on based on cognitive, emotional and mental processes.</li>
+</ol>
+<p>This categorization provides a useful context-specific grouping. Following this, a systematic search of the m-banking literature for intrinsic factors was carried out. Scientific articles gathered were given themes using text-mining techniques – specifically, lda for Topic Modeling. Some of these themes matched my categorization, as well. I also extended prior SLR studies by using statistical techniques – specifically, anova – to mathematically validate my findings. My results provide a strong empirical foundation for future researchers to do context-focused investigation.</p>
+<p>The Outcome of this study is to help enhance the understanding of intrinsic factors, highlight underutilized methodologies, and identify research gaps. Additionally, I highlight the dominance of certain theoretical models while advocating for greater exploration of under-studied theories and methods. My findings show notable geographical and study-design biases, particularly longitudinal research in developed nations. My categorized framework helps scholars identify intrinsic factors, relevant theories, and research gaps, which promotes targeted future research.<br>
+For practitioners and policymakers, I recommend designing emotionally engaging apps, ensuring transparent risk communication, and educating users on safe practices. These steps enhance m-banking adoption and effectiveness.</p>
+</section>
+<section id="the-relationship-between-mental-health-and-mobile-banking-adoption-evidence-from-canada" class="level3" data-number="0.2">
+<h3 data-number="0.2" class="anchored" data-anchor-id="the-relationship-between-mental-health-and-mobile-banking-adoption-evidence-from-canada"><span class="header-section-number">0.2</span> The Relationship Between Mental Health and Mobile Banking Adoption: Evidence from Canada</h3>
+<p>Following the work of the previous study, I focused on intrinsic factors. One of the factors I found to be under-explored in the literature was mental health.<br>
+Psychological factors are comparatively less-studied across the m-banking literature <span class="citation" data-cites="venkateshConsumerAcceptanceUse2012">Venkatesh et al. (<a href="#ref-venkateshConsumerAcceptanceUse2012" role="doc-biblioref">2012</a>)</span>, <span class="citation" data-cites="zouInvestigatingNonlinearConditional2023">Zou et al. (<a href="#ref-zouInvestigatingNonlinearConditional2023" role="doc-biblioref">2023-05, 2023</a>)</span>, <span class="citation" data-cites="tiwariExaminingImpactCustomers2021f">Tiwari et al. (<a href="#ref-tiwariExaminingImpactCustomers2021f" role="doc-biblioref">2021-12, 2021</a>)</span>. I verified this further doing a quick preliminary search on Web-of-Science. Using the following search query returned <span class="math inline">1,067</span> studies with no filters set on the results:</p>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>(“mobile banking” OR “mbanking” OR “m-banking”) AND (“adoption”)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>When changing the search query to find studies specifically on psychological factors, the total number of studies returned were <span class="math inline">157</span>, which is about <span class="math inline">14%</span> of the total. The new search query was:</p>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>(“mobile banking” OR “mbanking” OR “m-banking”) AND (“adoption”) AND (“affective” OR “psychological” OR “affect based” OR “affect-based” OR “emotional” OR “cognitive” OR “mental” OR “personal”)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>Using the same search queries in Scopus, <span class="math inline">753</span> results were returned for the first, and <span class="math inline">101</span> in the second search (<span class="math inline">13.4%</span>). It is clear that only a small portion of the literature in m-banking adoption is focused on psychological factors. In this study, I investigated the direct and moderated effect of mental health on m-banking adoption. Moderators were extracted from theories in technology adoption or from literature related to mental health: RS, SD, and SNS. I used a fixed effect logistic regression model grouped based on Canadian provinces following the cluster sampling design of my dataset. The results showed that mental health significantly and negatively affects m-banking adoption: better mental health outcomes were associated with lower likelihood of m-banking adoption. I did not find sufficient evidence for the moderating effects.</p>
+</section>
+<section id="the-device-divide-unpacking-mobile-banking-adoption-differences-for-smartphones-and-smart-wearable-devices-labelintro-section-p3" class="level3" data-number="0.3">
+<h3 data-number="0.3" class="anchored" data-anchor-id="the-device-divide-unpacking-mobile-banking-adoption-differences-for-smartphones-and-smart-wearable-devices-labelintro-section-p3"><span class="header-section-number">0.3</span> The Device Divide: Unpacking Mobile Banking Adoption Differences for Smartphones and Smart Wearable Devices “labelintro-section-p3</h3>
+<p>Moving on from focusing only on smartphones, I decided to do a comparative study considering newer devices used in m-banking. One of the findings of my SLR study from Section “refintro-section-p2 was that few comparative studies exist in general, and studies that focus on various tools used for m-banking are increasingly important. In this chapter, I examined the nuances of m-banking adoption across two mobile devices: smartphones and smart wearable devices. I investigated the impact of the following factors: trust, perceived security, perceived value (time savings), and demographic variables. Demographic factors are important as numerous studies identify these (e.g., age, gender, income, and education) as key factors influencing m-banking adoption <span class="citation" data-cites="chawlaModeratingEffectDemographic2018e">Chawla &amp; Joshi (<a href="#ref-chawlaModeratingEffectDemographic2018e" role="doc-biblioref">2018</a>)</span>, <span class="citation" data-cites="lyInternetBankingAdoption2022e">Ly &amp; Ly (<a href="#ref-lyInternetBankingAdoption2022e" role="doc-biblioref">2022-08, 2022</a>)</span>.</p>
+<p>The results from this chapter are device-specific insights. This study also refines existing technology adoption models. Additionally, to the best of my knowledge, this is the first study to compare behavioral differences between smartphone and smart wearable users in the context of m-banking. I found that trust impacts smartphone users more strongly, while wearable users prioritize time efficiency. Users perceived smartphones as more secure. Demographic factors such as age, education, and gender exhibited varying influences based on device type as well.</p>
+</section>
+<section id="references" class="level3" data-number="0.4">
+<h3 data-number="0.4" class="anchored" data-anchor-id="references"><span class="header-section-number">0.4</span> References</h3>
+
+
 
 
 </section>
-</main> 
-    <div class="about-footer"><div class="about-links">
-  <a href="" class="about-link" rel="" target="">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text"></span>
-  </a>
-  <a href="" class="about-link" rel="" target="">
-     <span class="about-link-text">Github</span>
-  </a>
-  <a href="/github.com/yektaLily" class="about-link" rel="" target="">
-     <span class="about-link-text"></span>
-  </a>
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-chawlaModeratingEffectDemographic2018e" class="csl-entry" role="listitem">
+Chawla, D., &amp; Joshi, H. (2018). The <span>Moderating Effect</span> of <span>Demographic Variables</span> on <span>Mobile Banking Adoption</span>: <span>An Empirical Investigation</span>. <em>Global Business Review</em>, <em>19</em>, S90–S113. <a href="https://doi.org/10.1177/0972150918757883">https://doi.org/10.1177/0972150918757883</a>
 </div>
+<div id="ref-davisUserAcceptanceComputer1989a" class="csl-entry" role="listitem">
+Davis, F. D., Bagozzi, R. P., &amp; Warshaw, P. R. (1989). User <span>Acceptance</span> of <span>Computer Technology</span>: <span>A Comparison</span> of <span>Two Theoretical Models</span>. <em>Management Science</em>, <em>35</em>(8), 982–1003. <a href="https://doi.org/10.1287/mnsc.35.8.982">https://doi.org/10.1287/mnsc.35.8.982</a>
 </div>
-  </div>
+<div id="ref-lyInternetBankingAdoption2022e" class="csl-entry" role="listitem">
+Ly, B., &amp; Ly, R. (2022-08, 2022). Internet <span>Banking Adoption</span> under <span>Technology Acceptance Model</span>—<span>Evidence</span> from <span>Cambodian Users</span>. <em>Computers in Human Behavior Reports</em>, <em>7</em>, 100224. <a href="https://doi.org/10.1016/j.chbr.2022.100224">https://doi.org/10.1016/j.chbr.2022.100224</a>
 </div>
- <!-- /main -->
+<div id="ref-medinConceptsConceptualStructure1989" class="csl-entry" role="listitem">
+Medin, D. L. (1989). Concepts and <span>Conceptual Structure</span>. <em>American Psychologist</em>, <em>44</em>(12), 1469–1481. <a href="https://doi.org/10.1037/0003-066X.44.12.1469">https://doi.org/10.1037/0003-066X.44.12.1469</a>
+</div>
+<div id="ref-oyetadeReviewDeterminantFactors2020" class="csl-entry" role="listitem">
+Oyetade, K. E., Zuva, T., &amp; Harmse, A. (2020). A <span>Review</span> of the <span>Determinant Factors</span> of <span>Technology Adoption</span>. In R. Silhavy (Ed.), <em>Applied <span>Informatics</span> and <span>Cybernetics</span> in <span>Intelligent Systems</span></em> (Vol. 1226, pp. 274–286). Springer International Publishing. <a href="https://doi.org/10.1007/978-3-030-51974-2_26">https://doi.org/10.1007/978-3-030-51974-2_26</a>
+</div>
+<div id="ref-tiwariExaminingImpactCustomers2021f" class="csl-entry" role="listitem">
+Tiwari, P., Tiwari, S. K., &amp; Gupta, A. (2021-12, 2021). Examining the <span>Impact</span> of <span>Customers</span>’ <span>Awareness</span>, <span>Risk</span> and <span>Trust</span> in <span>M-Banking Adoption</span>. <em>FIIB Business Review</em>, <em>10</em>(4), 413–423. <a href="https://doi.org/10.1177/23197145211019924">https://doi.org/10.1177/23197145211019924</a>
+</div>
+<div id="ref-venkatesh2000theoretical" class="csl-entry" role="listitem">
+Venkatesh, V., &amp; Davis, F. D. (2000). A <span>Theoretical Extension</span> of the <span>Technology Acceptance Model</span>: <span>Four Longitudinal Field Studies</span>. <em>Management Science</em>, <em>46</em>(2), 186–204. <a href="https://www.jstor.org/stable/2634758">https://www.jstor.org/stable/2634758</a>
+</div>
+<div id="ref-venkateshConsumerAcceptanceUse2012" class="csl-entry" role="listitem">
+Venkatesh, Thong, &amp; Xu. (2012). Consumer <span>Acceptance</span> and <span>Use</span> of <span>Information Technology</span>: <span>Extending</span> the <span>Unified Theory</span> of <span>Acceptance</span> and <span>Use</span> of <span>Technology</span>. <em>MIS Quarterly</em>, <em>36</em>(1), 157. <a href="https://doi.org/10.2307/41410412">https://doi.org/10.2307/41410412</a>
+</div>
+<div id="ref-zouInvestigatingNonlinearConditional2023" class="csl-entry" role="listitem">
+Zou, H. (Melody)., Qureshi, I., Fang, Y., Sun, H., Lim, K. H., Ramsey, E., &amp; McCole, P. (2023-05, 2023). Investigating the <span>Nonlinear</span> and <span>Conditional Effects</span> of <span>Trust</span>—<span>The New Role</span> of <span>Institutional Contexts</span> in <span class="nocase">online Repurchase</span>. <em>Information Systems Journal</em>, <em>33</em>(3), 486–523. <a href="https://doi.org/10.1111/isj.12410">https://doi.org/10.1111/isj.12410</a>
+</div>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>The words factor and construct are used interchangeably throughout most of m-banking adoption literature with no significant distinction between them <span class="citation" data-cites="oyetadeReviewDeterminantFactors2020">Oyetade et al. (<a href="#ref-oyetadeReviewDeterminantFactors2020" role="doc-biblioref">2020</a>)</span>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -340,6 +510,13 @@ ul.task-list li input[type="checkbox"] {
       window.document.body.appendChild(a);
     }
     setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     
