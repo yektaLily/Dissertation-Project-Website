@@ -1,6 +1,18 @@
 ---
 title: "The Inner Workings of Mobile Banking Adoption: A Systematic Literature Review of Intrinsic Factors" 
-
+author: "Yekta Amirkhalili"
+date: "today"
+format: 
+  html: 
+    code-fold: false
+    code-tools: true
+    self-contained: false
+    execute:
+      echo: true
+      warning: false
+      message: false
+      error: false
+      results: 'asis'
 ---
 <!-- CSS CHANGES -->
 <style>
@@ -16,9 +28,205 @@ h2{
 <!-- CSS CHANGES -->
 
 ## Part 1. Data Collection
+I downloaded the pdf of all the papers (143), reading them and extracting meta data based on the following:
+
+```{python name="meta_data_extraction"}
+#| eval: false 
+
+import numpy as np 
+
+database = np.array([
+    {
+        'id': 'string', # unique identifier for the paper following convention P2_#number 
+        'title': 'string', # title of the paper
+        'AffiliationCountry': 'string' , #name of country the study was conducted in,
+        'year': 2018-2024, # year of publication a value between 2018 and 2024
+        'journal': 'string', # name of the journal the paper was published in
+        'citations': 0-1000, # number of citations the paper has received - not reported in the paper 
+        'year_since': 3, # number of years since publication - not reported in the paper 
+        'cpy': 0, # number of citations per year - not reported in the paper 
+        'keywords': ['TAM', 'mbanking', 'awareness'], # list of keywords, broken into K1-K10
+        'abstract': 'string', # abstract of the paper 
+        'F': ['perceived usefulness'], # factors significant in the study, broken into F1-F9 
+        'FN': ['another factor'], # factors not significant in the study, broken into FNS1-FNS4 
+        'limit': ['geographical context'], # limitations of the study, broken into LIMIT1-LIMIT3 
+        'typeofResearch': 'string', # type of research conducted in the study 
+        'methods': ['regression analysis'], # methods used in the study, broken into METHOD1-METHOD4
+        'theory': ['TAM'] # theories used in the study, broken into THEORY1-THEORY4
+        'sampleSize': 100, # sample size of the study 
+        'tech': 'string', # main technology studied 
+        'man_theme': 'string', # Theme manually assigned by me 
+        'algo_theme': 'string', # Theme assigned by the algorithm 
+        'decision_Theme': 'string', # Final theme of the paper  
+        'Score_Sig': 0.0, # % of significance for factors 
+        'Score_NOT_Sig': 0.0, # % of non-significance for factors
+    }
+])
+```
 
 
-## Part 2. Data Analysis
+### Part 1.1 Finding Out Themes 
+
+
+
+## Part 2. Data Analysis 
+
+### Part 2.1 Data Cleaning and Prep 
+The R libraries used for data analysis are as follows: 
+```{r} 
+library(readr)
+library(dplyr)
+library(stringr)
+library(purrr)
+library(ggplot2)
+library(psych)
+library(tidyr)
+library(stargazer)
+library(forcats)
+library(xtable)
+library(ggraph)
+library(igraph)
+library(gt)
+library(ggpubr)
+```
+
+Looking at the data: 
+
+```{r}
+df <- read.csv("data/P2_AR_07.csv") 
+glimpse(df)
+```
+
+```{r}
+#| echo: false 
+og_copy <- df
+```
+
+Summary statiscs 
+
+```{r}
+psych::describe(df %>% 
+    dplyr::select(Year, Match, Num_Factors, NUM_FAC_NOTSIG, SampleSize)) %>% 
+    dplyr::select(vars, n, mean, sd, median, min, max) 
+```
+
+Woah! One paper has 25,000 and that is messing up the sample sizes. Remembering this study's ID:
+
+```{r}
+df %>% filter(SampleSize == 25000) %>% 
+    dplyr::select(ID, Title, SampleSize)
+```
+
+Setting aside the study with sample size of 25,000:
+```{r}
+psych::describe(
+    df %>% dplyr::select(Year, Match, Num_Factors, NUM_FAC_NOTSIG, SampleSize) %>% 
+    filter(SampleSize != 25000)) %>% 
+    dplyr::select(vars, n, mean, sd, median, min, max) 
+```
+
+Welp! Another large study.
+
+```{r}
+df %>% filter(SampleSize == 21526) %>% 
+    dplyr::select(ID, Title, SampleSize)
+```
+
+Setting aside the study with sample size of 25,000 and the one with 21,52 as they are outliers: 
+```{r}
+psych::describe(
+    df %>% filter(!ID %in% c('p2_59','p2_77')) %>% 
+    dplyr::select(ID, Year,Match, Num_Factors, NUM_FAC_NOTSIG, SampleSize)) %>% 
+    dplyr::select(vars, n, mean, sd, median, min, max) 
+```
+
+Counting the unique values for each of the columns: 
+```{r}
+results <- c(
+  paste('Number of Unique Values in ID: ', n_distinct(df$ID)),
+  paste('Number of Unique Values in Title: ', n_distinct(df$Title)),
+  paste('Number of Unique Values in PublicationTitles: ', n_distinct(df$PublicationTitle)),
+  paste('Number of Unique Values in Publisher: ', n_distinct(df$Publisher)),
+  paste('Number of Unique Values in AffiliationCountry: ', n_distinct(df$AffiliationCountry)),
+  paste('Number of Unique Values in Factors: ', dplyr::n_distinct(df %>% dplyr::select(F1:F9) %>% unlist())),
+  paste('Number of Unique Values in Not Sig: ', dplyr::n_distinct(df %>% dplyr::select(FNS1:FNS4) %>% unlist())),
+  paste('Number of Unique Values in Methods: ', dplyr::n_distinct(df %>% dplyr::select(METHOD1:METHOD4) %>% unlist())),
+  paste('Number of Unique Values in Theory: ', dplyr::n_distinct(df %>% dplyr::select(THEORY1:THEORY4) %>% unlist())),
+  paste('Number of Unique Values in Limits: ', dplyr::n_distinct(df %>% dplyr::select(LIMIT1:LIMIT3) %>% unlist())),
+  paste('Number of Unique Values in ResearchType: ', n_distinct(df$ResearchType)),
+  paste('Number of Unique Values in Authors: ', n_distinct(df$Creators)),
+  paste('Number of Unique Values in Keywords: ', dplyr::n_distinct(df %>% dplyr::select(K1:K10) %>% unlist())),
+  paste('Number of Unique Values in Tech: ', n_distinct(df$Tech)),
+  paste('Number of Unique Values in Themes: ', n_distinct(df$DecisionTheme))
+)
+
+cat(results, sep = "\n")
+```
+
+
+Checking the sample sizes Without the outliers: 
+```{r}
+psych::describe(
+    df %>% filter(!ID %in% c('p2_59','p2_77')) %>% 
+    dplyr::select(SampleSize)) %>% 
+    dplyr::select(n, mean, sd, median, min, max) 
+```
+
+```{r}
+noOutliers <- df %>% filter(!ID %in% c('p2_59','p2_77'))
+
+quantiles <- quantile(noOutliers$SampleSize, na.rm = T)
+
+quantile_binned <- cut(df$SampleSize, 
+                breaks = quantiles, 
+                labels = c("SQ1", "SQ2", "SQ3", "SQ4"), 
+                include.lowest = TRUE)
+
+df$SampleSizeBin <- quantile_binned
+
+df <- df %>% mutate(
+    SampleSizeBin = if_else(
+        is.na(SampleSizeBin),
+        "NotStated",
+        SampleSizeBin
+    )
+)
+
+df %>% count(SampleSizeBin)
+```
+
+
+### Part 2.2 Data Analysis
+Now let's actually do some analysis. 
+Let's visualize how the themes of the papers have changed across the years. 
+I will first generate a bar plot that fills the bars at each year (as a categorical factor) with proportions of themes in that year. 
+This is an aggregation that happens under the hood, and using `position = "fill"` will actually make sure all the bars consider things relative to eachother, filling the full 100% of the bar. 
+
+```{r}
+ggplot(df, aes(x = as.factor(Year), fill = DecisionTheme)) +
+  geom_bar(position = "fill") +
+  theme_minimal() +
+  labs(fill = "Theme",
+       x = "Year",
+       y = "Total Count") +
+  fill_palette("Set3")
+
+``` 
+
+To see how things move/flow over the years, a line chart is a great idea: 
+```{r}
+df %>%
+    dplyr::count(DecisionTheme, Year) %>%
+    ggplot(aes(x = as.factor(Year), y = n, color = DecisionTheme, group = DecisionTheme)) +
+  geom_line() +
+  geom_point() +
+  theme_minimal() +
+  labs(fill = "Theme",
+       x = "Year",
+       y = "Total Count") +
+  fill_palette("Dark2")
+
+```
 
 ## Part 3. Results 
 

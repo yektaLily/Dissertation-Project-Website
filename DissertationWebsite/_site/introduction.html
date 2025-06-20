@@ -141,7 +141,7 @@ window.Quarto = {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -321,7 +321,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link active" href="./index.html" aria-current="page"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -335,10 +335,102 @@ window.Quarto = {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./introduction.html">Introduction</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+        <div class="sidebar-tools-collapse">
+    <a href="./github.com/YektaDissertation" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+</div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./introduction.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Basics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./techAdopt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Technology Adoption</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./mobileBanking.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Mobile Banking</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Projects</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./study1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Project 1. SLR</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./study2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Project 2. Mobile Health</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./study3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Project 3. Digital Divide</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
 <p><img src="./images/uw-logo.png" class="img-fluid"></p>
@@ -452,8 +544,24 @@ Psychological factors are comparatively less-studied across the m-banking litera
 <p>Moving on from focusing only on smartphones, I decided to do a comparative study considering newer devices used in m-banking. One of the findings of my SLR study from Section “refintro-section-p2 was that few comparative studies exist in general, and studies that focus on various tools used for m-banking are increasingly important. In this chapter, I examined the nuances of m-banking adoption across two mobile devices: smartphones and smart wearable devices. I investigated the impact of the following factors: trust, perceived security, perceived value (time savings), and demographic variables. Demographic factors are important as numerous studies identify these (e.g., age, gender, income, and education) as key factors influencing m-banking adoption <span class="citation" data-cites="chawlaModeratingEffectDemographic2018e">Chawla &amp; Joshi (<a href="#ref-chawlaModeratingEffectDemographic2018e" role="doc-biblioref">2018</a>)</span>, <span class="citation" data-cites="lyInternetBankingAdoption2022e">Ly &amp; Ly (<a href="#ref-lyInternetBankingAdoption2022e" role="doc-biblioref">2022-08, 2022</a>)</span>.</p>
 <p>The results from this chapter are device-specific insights. This study also refines existing technology adoption models. Additionally, to the best of my knowledge, this is the first study to compare behavioral differences between smartphone and smart wearable users in the context of m-banking. I found that trust impacts smartphone users more strongly, while wearable users prioritize time efficiency. Users perceived smartphones as more secure. Demographic factors such as age, education, and gender exhibited varying influences based on device type as well.</p>
 </section>
-<section id="references" class="level3" data-number="0.4">
-<h3 data-number="0.4" class="anchored" data-anchor-id="references"><span class="header-section-number">0.4</span> References</h3>
+<section id="some-questions-and-answers" class="level3" data-number="0.4">
+<h3 data-number="0.4" class="anchored" data-anchor-id="some-questions-and-answers"><span class="header-section-number">0.4</span> Some Questions and Answers</h3>
+<ul>
+<li>Why not talk about “use” but “adopt”?</li>
+</ul>
+<p>Adoption is a more comprehensive term that encompasses the entire process of integrating a new technology into daily life, while use may imply a more superficial interaction.</p>
+<ul>
+<li><p>What’s been done before in the litearture?</p></li>
+<li><p>What did I do that was novel?</p></li>
+<li><p>What insights I gained from this dissertation that were new?</p></li>
+<li><p>How did I fill the literature gaps?</p></li>
+<li><p>Why is it that categorization of the factors helps in understanding the factors better?</p></li>
+<li><p>How exactly did I categorize the factors?</p></li>
+<li><p>Who does this categorization help?</p></li>
+</ul>
+</section>
+<section id="references" class="level3" data-number="0.5">
+<h3 data-number="0.5" class="anchored" data-anchor-id="references"><span class="header-section-number">0.5</span> References</h3>
 
 
 

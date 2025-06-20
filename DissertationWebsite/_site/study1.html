@@ -6,6 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Yekta Amirkhalili">
+<meta name="dcterms.date" content="2025-06-19">
 
 <title>The Inner Workings of Mobile Banking Adoption: A Systematic Literature Review of Intrinsic Factors – Yekta’s Dissertation</title>
 <style>
@@ -19,6 +21,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -301,6 +338,12 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./introduction.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction</span></a>
   </div>
 </li>
@@ -368,8 +411,15 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#part-1.-data-collection" id="toc-part-1.-data-collection" class="nav-link active" data-scroll-target="#part-1.-data-collection">Part 1. Data Collection</a></li>
-  <li><a href="#part-2.-data-analysis" id="toc-part-2.-data-analysis" class="nav-link" data-scroll-target="#part-2.-data-analysis">Part 2. Data Analysis</a></li>
+  <li><a href="#part-1.-data-collection" id="toc-part-1.-data-collection" class="nav-link active" data-scroll-target="#part-1.-data-collection">Part 1. Data Collection</a>
+  <ul class="collapse">
+  <li><a href="#part-1.1-finding-out-themes" id="toc-part-1.1-finding-out-themes" class="nav-link" data-scroll-target="#part-1.1-finding-out-themes">Part 1.1 Finding Out Themes</a></li>
+  </ul></li>
+  <li><a href="#part-2.-data-analysis" id="toc-part-2.-data-analysis" class="nav-link" data-scroll-target="#part-2.-data-analysis">Part 2. Data Analysis</a>
+  <ul class="collapse">
+  <li><a href="#part-2.1-data-cleaning-and-prep" id="toc-part-2.1-data-cleaning-and-prep" class="nav-link" data-scroll-target="#part-2.1-data-cleaning-and-prep">Part 2.1 Data Cleaning and Prep</a></li>
+  <li><a href="#part-2.2-data-analysis" id="toc-part-2.2-data-analysis" class="nav-link" data-scroll-target="#part-2.2-data-analysis">Part 2.2 Data Analysis</a></li>
+  </ul></li>
   <li><a href="#part-3.-results" id="toc-part-3.-results" class="nav-link" data-scroll-target="#part-3.-results">Part 3. Results</a></li>
   </ul>
 </nav>
@@ -380,14 +430,26 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./study1.html">Projects</a></li><li class="breadcrumb-item"><a href="./study1.html">Project 1. SLR</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">The Inner Workings of Mobile Banking Adoption: A Systematic Literature Review of Intrinsic Factors</h1>
+<div class="quarto-title-block"><div><h1 class="title">The Inner Workings of Mobile Banking Adoption: A Systematic Literature Review of Intrinsic Factors</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Yekta Amirkhalili </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">June 19, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -411,13 +473,332 @@ h2{
 <!-- CSS CHANGES -->
 <section id="part-1.-data-collection" class="level2">
 <h2 class="anchored" data-anchor-id="part-1.-data-collection">Part 1. Data Collection</h2>
+<p>I downloaded the pdf of all the papers (143), reading them and extracting meta data based on the following:</p>
+<div class="cell" name="meta_data_extraction">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>database <span class="op">=</span> np.array([</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">'id'</span>: <span class="st">'string'</span>, <span class="co"># unique identifier for the paper following convention P2_#number </span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">'title'</span>: <span class="st">'string'</span>, <span class="co"># title of the paper</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">'AffiliationCountry'</span>: <span class="st">'string'</span> , <span class="co">#name of country the study was conducted in,</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">'year'</span>: <span class="dv">2018</span><span class="op">-</span><span class="dv">2024</span>, <span class="co"># year of publication a value between 2018 and 2024</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">'journal'</span>: <span class="st">'string'</span>, <span class="co"># name of the journal the paper was published in</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>        <span class="st">'citations'</span>: <span class="dv">0</span><span class="op">-</span><span class="dv">1000</span>, <span class="co"># number of citations the paper has received - not reported in the paper </span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>        <span class="st">'year_since'</span>: <span class="dv">3</span>, <span class="co"># number of years since publication - not reported in the paper </span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>        <span class="st">'cpy'</span>: <span class="dv">0</span>, <span class="co"># number of citations per year - not reported in the paper </span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>        <span class="st">'keywords'</span>: [<span class="st">'TAM'</span>, <span class="st">'mbanking'</span>, <span class="st">'awareness'</span>], <span class="co"># list of keywords, broken into K1-K10</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>        <span class="st">'abstract'</span>: <span class="st">'string'</span>, <span class="co"># abstract of the paper </span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>        <span class="st">'F'</span>: [<span class="st">'perceived usefulness'</span>], <span class="co"># factors significant in the study, broken into F1-F9 </span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>        <span class="st">'FN'</span>: [<span class="st">'another factor'</span>], <span class="co"># factors not significant in the study, broken into FNS1-FNS4 </span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>        <span class="st">'limit'</span>: [<span class="st">'geographical context'</span>], <span class="co"># limitations of the study, broken into LIMIT1-LIMIT3 </span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>        <span class="st">'typeofResearch'</span>: <span class="st">'string'</span>, <span class="co"># type of research conducted in the study </span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>        <span class="st">'methods'</span>: [<span class="st">'regression analysis'</span>], <span class="co"># methods used in the study, broken into METHOD1-METHOD4</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>        <span class="st">'theory'</span>: [<span class="st">'TAM'</span>] <span class="co"># theories used in the study, broken into THEORY1-THEORY4</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>        <span class="st">'sampleSize'</span>: <span class="dv">100</span>, <span class="co"># sample size of the study </span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>        <span class="st">'tech'</span>: <span class="st">'string'</span>, <span class="co"># main technology studied </span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>        <span class="st">'man_theme'</span>: <span class="st">'string'</span>, <span class="co"># Theme manually assigned by me </span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>        <span class="st">'algo_theme'</span>: <span class="st">'string'</span>, <span class="co"># Theme assigned by the algorithm </span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>        <span class="st">'decision_Theme'</span>: <span class="st">'string'</span>, <span class="co"># Final theme of the paper  </span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Score_Sig'</span>: <span class="fl">0.0</span>, <span class="co"># % of significance for factors </span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Score_NOT_Sig'</span>: <span class="fl">0.0</span>, <span class="co"># % of non-significance for factors</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="part-1.1-finding-out-themes" class="level3">
+<h3 class="anchored" data-anchor-id="part-1.1-finding-out-themes">Part 1.1 Finding Out Themes</h3>
+</section>
 </section>
 <section id="part-2.-data-analysis" class="level2">
 <h2 class="anchored" data-anchor-id="part-2.-data-analysis">Part 2. Data Analysis</h2>
+<section id="part-2.1-data-cleaning-and-prep" class="level3">
+<h3 class="anchored" data-anchor-id="part-2.1-data-cleaning-and-prep">Part 2.1 Data Cleaning and Prep</h3>
+<p>The R libraries used for data analysis are as follows:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(purrr)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(psych)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stargazer)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(forcats)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(xtable)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggraph)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(igraph)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggpubr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Looking at the data:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/P2_AR_07.csv"</span>) </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 143
+Columns: 62
+$ Reason_Theme       &lt;chr&gt; "comparative", "behavioral intention", "keywords", …
+$ CiteKey            &lt;chr&gt; "LonkaniAcomparativeStudyOfTrust2020", "SaprikisACo…
+$ ID                 &lt;chr&gt; "p2_01", "p2_02", "p2_03", "p2_04", "p2_05", "p2_06…
+$ Algo_Theme         &lt;chr&gt; "psychological, cultural, demographic", "psychologi…
+$ DecisionTheme      &lt;chr&gt; "cultural", "psychological", "psychological", "cult…
+$ Man_Theme          &lt;chr&gt; "cultural, psychological", "social, psychological",…
+$ Match              &lt;int&gt; 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, …
+$ Title              &lt;chr&gt; "a comparative study of trust in mobile banking: an…
+$ Year               &lt;int&gt; 2020, 2022, 2021, 2019, 2020, 2020, 2024, 2020, 201…
+$ PublicationTitle   &lt;chr&gt; "journal of global information management", "inform…
+$ Creators           &lt;chr&gt; "ravi lonkani, chuleeporn changchit, tim klaus, jom…
+$ Publisher          &lt;chr&gt; "igi global", "mdpi", "igi global", "elsevier", "wi…
+$ AffiliationCountry &lt;chr&gt; "thailand", "greece", "brazil, south korea, usa", "…
+$ K1                 &lt;chr&gt; "technology acceptance model", "word-of-mouth", "em…
+$ K2                 &lt;chr&gt; "initial trust", "mobile-banking", "consumer adopti…
+$ K3                 &lt;chr&gt; "consumer acceptance", "acceptance model", "initial…
+$ K4                 &lt;chr&gt; "gender-differences", "information-technology", "in…
+$ K5                 &lt;chr&gt; "normative beliefs", "consumer adoption", "anxiety"…
+$ K6                 &lt;chr&gt; "national culture", "moderating role", "acceptance"…
+$ K7                 &lt;chr&gt; "usage intentions", "utaut model", "commerce", "emp…
+$ K8                 &lt;chr&gt; "privacy concerns", "services", "traits", "acceptan…
+$ K9                 &lt;chr&gt; "internet users", "internet", "usage", "mediating r…
+$ K10                &lt;chr&gt; "online trust", "determinants", "satisfaction", "ad…
+$ Num_Factors        &lt;int&gt; 5, 8, 5, 6, 4, 6, 4, 5, 4, 4, 8, 4, 5, 3, 6, 8, 6, …
+$ F1                 &lt;chr&gt; "cltr", "peex", "self", "habt", "attd", "pu", "prgt…
+$ F2                 &lt;chr&gt; "norm_blf", "socinf", "trst", "psec", "intrac", "pe…
+$ F3                 &lt;chr&gt; "prv_exp", "fac_cond", "peou", "ppriv", "cltr", "so…
+$ F4                 &lt;chr&gt; "competnc", "risk", "pu", "trst", "innov", "fac_con…
+$ F5                 &lt;chr&gt; "trst", "anxiety", "intnt_use", "peex", "", "trst",…
+$ F6                 &lt;chr&gt; "", "rwrd", "", "price", "", "prisk", "", "", "", "…
+$ F7                 &lt;chr&gt; "", "sec", "", "", "", "", "", "", "", "", "habt", …
+$ F8                 &lt;chr&gt; "", "recom", "", "", "", "", "", "", "", "", "price…
+$ F9                 &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", "", "", "",…
+$ F1_THEME           &lt;chr&gt; "social", "personal", "psychological", "personal", …
+$ F2_THEME           &lt;chr&gt; "social", "social", "psychological", "perceptive", …
+$ F3_THEME           &lt;chr&gt; "personal", "external", "perceptive", "perceptive",…
+$ F4_THEME           &lt;chr&gt; "external", "external", "perceptive", "psychologica…
+$ F5_THEME           &lt;chr&gt; "psychological", "psychological", "psychological", …
+$ F6_THEME           &lt;chr&gt; "", "external", "", "external", "", "perceptive", "…
+$ F7_THEME           &lt;chr&gt; "", "external", "", "", "", "", "", "", "", "", "pe…
+$ F8_THEME           &lt;chr&gt; "", "external", "", "", "", "", "", "", "", "", "ex…
+$ F9_THEME           &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", "", "", "",…
+$ NUM_FAC_NOTSIG     &lt;int&gt; 2, 2, 0, 4, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, …
+$ FNS1               &lt;chr&gt; "age", "efex", "", "peex", "", "", "", "", "", "soc…
+$ FNS2               &lt;chr&gt; "sex", "fac_cond", "", "pval", "", "", "", "", "", …
+$ FNS3               &lt;chr&gt; "", "", "", "socinf", "", "", "", "", "", "", "", "…
+$ FNS4               &lt;chr&gt; "", "", "", "hed_motiv", "", "", "", "", "", "", ""…
+$ ResearchType       &lt;chr&gt; "comparative", "empirical", "empirical", "empirical…
+$ SampleSize         &lt;int&gt; 560, 837, 458, 901, 1340, 755, 418, 203, 384, 127, …
+$ METHOD1            &lt;chr&gt; "regression", "cfa", "cfa", "sem", "multigroup sem"…
+$ METHOD2            &lt;chr&gt; "", "sem", "sem", "", "", "", "", "", "", "", "", "…
+$ METHOD3            &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", "", "", "",…
+$ METHOD4            &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", "", "", "",…
+$ Tech               &lt;chr&gt; "mobile banking", "mobile banking", "mobile banking…
+$ THEORY1            &lt;chr&gt; "hcd", "utaut", "tam", "utaut2", "tam", "tam", "dct…
+$ THEORY2            &lt;chr&gt; "", "", "", "", "tpb", "", "", "", "tpb", "", "utau…
+$ THEORY3            &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", "", "", "",…
+$ THEORY4            &lt;chr&gt; "", "", "", "", "", "", "", "", "", "", "", "", "",…
+$ LIMIT1             &lt;chr&gt; "sample", "sample", "sample", "sample", "no_long", …
+$ LIMIT2             &lt;chr&gt; "", "cross_cult", "bias", "no_mod", "bias", "sample…
+$ LIMIT3             &lt;chr&gt; "", "incomp_fac", "question", "incomp_fac", "no_mod…
+$ Abstract           &lt;chr&gt; "with the rapid growth of mobile phone usage, mobil…</code></pre>
+</div>
+</div>
+<p>Summary statiscs</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">describe</span>(df <span class="sc">%&gt;%</span> </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(Year, Match, Num_Factors, NUM_FAC_NOTSIG, SampleSize)) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(vars, n, mean, sd, median, min, max) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>               vars   n    mean      sd median  min   max
+Year              1 143 2021.18    1.84   2021 2018  2024
+Match             2 143    0.94    0.23      1    0     1
+Num_Factors       3 143    5.31    1.60      5    2     9
+NUM_FAC_NOTSIG    4 143    0.46    0.87      0    0     4
+SampleSize        5 103  894.50 3189.24    384   26 25000</code></pre>
+</div>
+</div>
+<p>Woah! One paper has 25,000 and that is messing up the sample sizes. Remembering this study’s ID:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> <span class="fu">filter</span>(SampleSize <span class="sc">==</span> <span class="dv">25000</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(ID, Title, SampleSize)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     ID
+1 p2_77
+                                                                            Title
+1 financial literacy, behavioral traits, and epayment adoption and usage in japan
+  SampleSize
+1      25000</code></pre>
+</div>
+</div>
+<p>Setting aside the study with sample size of 25,000:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">describe</span>(</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    df <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(Year, Match, Num_Factors, NUM_FAC_NOTSIG, SampleSize) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(SampleSize <span class="sc">!=</span> <span class="dv">25000</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(vars, n, mean, sd, median, min, max) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>               vars   n    mean      sd median  min   max
+Year              1 102 2021.14    1.86   2021 2018  2024
+Match             2 102    0.94    0.24      1    0     1
+Num_Factors       3 102    5.15    1.65      5    2     9
+NUM_FAC_NOTSIG    4 102    0.54    0.95      0    0     4
+SampleSize        5 102  658.18 2112.42    384   26 21526</code></pre>
+</div>
+</div>
+<p>Welp! Another large study.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> <span class="fu">filter</span>(SampleSize <span class="sc">==</span> <span class="dv">21526</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(ID, Title, SampleSize)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     ID
+1 p2_59
+                                                                                                                                                                     Title
+1 exploring mobile banking adoption and service quality features through user-generated content: the application of a topic modeling approach to google play store reviews
+  SampleSize
+1      21526</code></pre>
+</div>
+</div>
+<p>Setting aside the study with sample size of 25,000 and the one with 21,52 as they are outliers:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">describe</span>(</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    df <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="sc">!</span>ID <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">'p2_59'</span>,<span class="st">'p2_77'</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(ID, Year,Match, Num_Factors, NUM_FAC_NOTSIG, SampleSize)) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(vars, n, mean, sd, median, min, max) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>               vars   n    mean     sd median  min  max
+ID*               1 141   71.00  40.85     71    1  141
+Year              2 141 2021.16   1.85   2021 2018 2024
+Match             3 141    0.94   0.23      1    0    1
+Num_Factors       4 141    5.33   1.60      5    2    9
+NUM_FAC_NOTSIG    5 141    0.47   0.87      0    0    4
+SampleSize        6 101  451.56 330.40    384   26 2202</code></pre>
+</div>
+</div>
+<p>Counting the unique values for each of the columns:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste</span>(<span class="st">'Number of Unique Values in ID: '</span>, <span class="fu">n_distinct</span>(df<span class="sc">$</span>ID)),</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste</span>(<span class="st">'Number of Unique Values in Title: '</span>, <span class="fu">n_distinct</span>(df<span class="sc">$</span>Title)),</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste</span>(<span class="st">'Number of Unique Values in PublicationTitles: '</span>, <span class="fu">n_distinct</span>(df<span class="sc">$</span>PublicationTitle)),</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste</span>(<span class="st">'Number of Unique Values in Publisher: '</span>, <span class="fu">n_distinct</span>(df<span class="sc">$</span>Publisher)),</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste</span>(<span class="st">'Number of Unique Values in AffiliationCountry: '</span>, <span class="fu">n_distinct</span>(df<span class="sc">$</span>AffiliationCountry)),</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste</span>(<span class="st">'Number of Unique Values in Factors: '</span>, dplyr<span class="sc">::</span><span class="fu">n_distinct</span>(df <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(F1<span class="sc">:</span>F9) <span class="sc">%&gt;%</span> <span class="fu">unlist</span>())),</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste</span>(<span class="st">'Number of Unique Values in Not Sig: '</span>, dplyr<span class="sc">::</span><span class="fu">n_distinct</span>(df <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(FNS1<span class="sc">:</span>FNS4) <span class="sc">%&gt;%</span> <span class="fu">unlist</span>())),</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste</span>(<span class="st">'Number of Unique Values in Methods: '</span>, dplyr<span class="sc">::</span><span class="fu">n_distinct</span>(df <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(METHOD1<span class="sc">:</span>METHOD4) <span class="sc">%&gt;%</span> <span class="fu">unlist</span>())),</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste</span>(<span class="st">'Number of Unique Values in Theory: '</span>, dplyr<span class="sc">::</span><span class="fu">n_distinct</span>(df <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(THEORY1<span class="sc">:</span>THEORY4) <span class="sc">%&gt;%</span> <span class="fu">unlist</span>())),</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste</span>(<span class="st">'Number of Unique Values in Limits: '</span>, dplyr<span class="sc">::</span><span class="fu">n_distinct</span>(df <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(LIMIT1<span class="sc">:</span>LIMIT3) <span class="sc">%&gt;%</span> <span class="fu">unlist</span>())),</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste</span>(<span class="st">'Number of Unique Values in ResearchType: '</span>, <span class="fu">n_distinct</span>(df<span class="sc">$</span>ResearchType)),</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste</span>(<span class="st">'Number of Unique Values in Authors: '</span>, <span class="fu">n_distinct</span>(df<span class="sc">$</span>Creators)),</span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste</span>(<span class="st">'Number of Unique Values in Keywords: '</span>, dplyr<span class="sc">::</span><span class="fu">n_distinct</span>(df <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(K1<span class="sc">:</span>K10) <span class="sc">%&gt;%</span> <span class="fu">unlist</span>())),</span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste</span>(<span class="st">'Number of Unique Values in Tech: '</span>, <span class="fu">n_distinct</span>(df<span class="sc">$</span>Tech)),</span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste</span>(<span class="st">'Number of Unique Values in Themes: '</span>, <span class="fu">n_distinct</span>(df<span class="sc">$</span>DecisionTheme))</span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(results, <span class="at">sep =</span> <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Number of Unique Values in ID:  143
+Number of Unique Values in Title:  143
+Number of Unique Values in PublicationTitles:  54
+Number of Unique Values in Publisher:  15
+Number of Unique Values in AffiliationCountry:  43
+Number of Unique Values in Factors:  233
+Number of Unique Values in Not Sig:  32
+Number of Unique Values in Methods:  42
+Number of Unique Values in Theory:  44
+Number of Unique Values in Limits:  16
+Number of Unique Values in ResearchType:  16
+Number of Unique Values in Authors:  137
+Number of Unique Values in Keywords:  413
+Number of Unique Values in Tech:  9
+Number of Unique Values in Themes:  7</code></pre>
+</div>
+</div>
+<p>Checking the sample sizes Without the outliers:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">describe</span>(</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    df <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="sc">!</span>ID <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">'p2_59'</span>,<span class="st">'p2_77'</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(SampleSize)) <span class="sc">%&gt;%</span> </span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(n, mean, sd, median, min, max) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>             n   mean    sd median min  max
+SampleSize 101 451.56 330.4    384  26 2202</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>noOutliers <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="sc">!</span>ID <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">'p2_59'</span>,<span class="st">'p2_77'</span>))</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>quantiles <span class="ot">&lt;-</span> <span class="fu">quantile</span>(noOutliers<span class="sc">$</span>SampleSize, <span class="at">na.rm =</span> T)</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>quantile_binned <span class="ot">&lt;-</span> <span class="fu">cut</span>(df<span class="sc">$</span>SampleSize, </span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>                <span class="at">breaks =</span> quantiles, </span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>                <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"SQ1"</span>, <span class="st">"SQ2"</span>, <span class="st">"SQ3"</span>, <span class="st">"SQ4"</span>), </span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>                <span class="at">include.lowest =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>SampleSizeBin <span class="ot">&lt;-</span> quantile_binned</span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(</span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">SampleSizeBin =</span> <span class="fu">if_else</span>(</span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>        <span class="fu">is.na</span>(SampleSizeBin),</span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>        <span class="st">"NotStated"</span>,</span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>        SampleSizeBin</span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> <span class="fu">count</span>(SampleSizeBin)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  SampleSizeBin  n
+1     NotStated 42
+2           SQ1 26
+3           SQ2 28
+4           SQ3 23
+5           SQ4 24</code></pre>
+</div>
+</div>
+</section>
+<section id="part-2.2-data-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="part-2.2-data-analysis">Part 2.2 Data Analysis</h3>
+<p>Now let’s actually do some analysis. Let’s visualize how the themes of the papers have changed across the years. I will first generate a bar plot that fills the bars at each year (as a categorical factor) with proportions of themes in that year. This is an aggregation that happens under the hood, and using <code>position = "fill"</code> will actually make sure all the bars consider things relative to eachother, filling the full 100% of the bar.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">as.factor</span>(Year), <span class="at">fill =</span> DecisionTheme)) <span class="sc">+</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>) <span class="sc">+</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">fill =</span> <span class="st">"Theme"</span>,</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Year"</span>,</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Total Count"</span>) <span class="sc">+</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fill_palette</span>(<span class="st">"Set3"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="study1_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>To see how things move/flow over the years, a line chart is a great idea:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">count</span>(DecisionTheme, Year) <span class="sc">%&gt;%</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">as.factor</span>(Year), <span class="at">y =</span> n, <span class="at">color =</span> DecisionTheme, <span class="at">group =</span> DecisionTheme)) <span class="sc">+</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">fill =</span> <span class="st">"Theme"</span>,</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Year"</span>,</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Total Count"</span>) <span class="sc">+</span></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fill_palette</span>(<span class="st">"Dark2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="study1_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
 </section>
 <section id="part-3.-results" class="level2">
 <h2 class="anchored" data-anchor-id="part-3.-results">Part 3. Results</h2>
 
+
+<!-- -->
 
 </section>
 
@@ -504,6 +885,57 @@ h2{
         container: window.document.getElementById('quarto-embedded-source-code-modal')
       });
       clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
@@ -833,7 +1265,242 @@ h2{
       }
     }
   });
-  </script>
+  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb23" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "The Inner Workings of Mobile Banking Adoption: A Systematic Literature Review of Intrinsic Factors" </span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Yekta Amirkhalili"</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "today"</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> </span></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="co">  html: </span></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: false</span></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a><span class="co">    self-contained: false</span></span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a><span class="co">    execute:</span></span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a><span class="co">      echo: true</span></span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a><span class="co">      warning: false</span></span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a><span class="co">      message: false</span></span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a><span class="co">      error: false</span></span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a><span class="co">      results: 'asis'</span></span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- CSS CHANGES --&gt;</span></span>
+<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">style</span><span class="dt">&gt;</span></span>
+<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a><span class="fu">.quarto-title</span> h1<span class="fu">.title</span> {</span>
+<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a>  <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">1.5</span><span class="dt">rem</span><span class="op">;</span> </span>
+<span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-23"><a href="#cb23-23" aria-hidden="true" tabindex="-1"></a>h2{</span>
+<span id="cb23-24"><a href="#cb23-24" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font-size</span><span class="ch">:</span> <span class="dv">1.2</span><span class="dt">rem</span><span class="op">;</span></span>
+<span id="cb23-25"><a href="#cb23-25" aria-hidden="true" tabindex="-1"></a>    <span class="kw">background-color</span><span class="ch">:</span><span class="fu">rgba(</span><span class="dv">128</span><span class="op">,</span> <span class="dv">170</span><span class="op">,</span> <span class="dv">156</span><span class="op">,</span> <span class="dv">0.48</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb23-26"><a href="#cb23-26" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb23-27"><a href="#cb23-27" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">style</span><span class="dt">&gt;</span></span>
+<span id="cb23-28"><a href="#cb23-28" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- CSS CHANGES --&gt;</span></span>
+<span id="cb23-29"><a href="#cb23-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-30"><a href="#cb23-30" aria-hidden="true" tabindex="-1"></a><span class="fu">## Part 1. Data Collection</span></span>
+<span id="cb23-31"><a href="#cb23-31" aria-hidden="true" tabindex="-1"></a>I downloaded the pdf of all the papers (143), reading them and extracting meta data based on the following:</span>
+<span id="cb23-32"><a href="#cb23-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-33"><a href="#cb23-33" aria-hidden="true" tabindex="-1"></a><span class="in">```{python name="meta_data_extraction"}</span></span>
+<span id="cb23-34"><a href="#cb23-34" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false </span></span>
+<span id="cb23-35"><a href="#cb23-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-36"><a href="#cb23-36" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np </span>
+<span id="cb23-37"><a href="#cb23-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-38"><a href="#cb23-38" aria-hidden="true" tabindex="-1"></a>database <span class="op">=</span> np.array([</span>
+<span id="cb23-39"><a href="#cb23-39" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb23-40"><a href="#cb23-40" aria-hidden="true" tabindex="-1"></a>        <span class="st">'id'</span>: <span class="st">'string'</span>, <span class="co"># unique identifier for the paper following convention P2_#number </span></span>
+<span id="cb23-41"><a href="#cb23-41" aria-hidden="true" tabindex="-1"></a>        <span class="st">'title'</span>: <span class="st">'string'</span>, <span class="co"># title of the paper</span></span>
+<span id="cb23-42"><a href="#cb23-42" aria-hidden="true" tabindex="-1"></a>        <span class="st">'AffiliationCountry'</span>: <span class="st">'string'</span> , <span class="co">#name of country the study was conducted in,</span></span>
+<span id="cb23-43"><a href="#cb23-43" aria-hidden="true" tabindex="-1"></a>        <span class="st">'year'</span>: <span class="dv">2018</span><span class="op">-</span><span class="dv">2024</span>, <span class="co"># year of publication a value between 2018 and 2024</span></span>
+<span id="cb23-44"><a href="#cb23-44" aria-hidden="true" tabindex="-1"></a>        <span class="st">'journal'</span>: <span class="st">'string'</span>, <span class="co"># name of the journal the paper was published in</span></span>
+<span id="cb23-45"><a href="#cb23-45" aria-hidden="true" tabindex="-1"></a>        <span class="st">'citations'</span>: <span class="dv">0</span><span class="op">-</span><span class="dv">1000</span>, <span class="co"># number of citations the paper has received - not reported in the paper </span></span>
+<span id="cb23-46"><a href="#cb23-46" aria-hidden="true" tabindex="-1"></a>        <span class="st">'year_since'</span>: <span class="dv">3</span>, <span class="co"># number of years since publication - not reported in the paper </span></span>
+<span id="cb23-47"><a href="#cb23-47" aria-hidden="true" tabindex="-1"></a>        <span class="st">'cpy'</span>: <span class="dv">0</span>, <span class="co"># number of citations per year - not reported in the paper </span></span>
+<span id="cb23-48"><a href="#cb23-48" aria-hidden="true" tabindex="-1"></a>        <span class="st">'keywords'</span>: [<span class="st">'TAM'</span>, <span class="st">'mbanking'</span>, <span class="st">'awareness'</span>], <span class="co"># list of keywords, broken into K1-K10</span></span>
+<span id="cb23-49"><a href="#cb23-49" aria-hidden="true" tabindex="-1"></a>        <span class="st">'abstract'</span>: <span class="st">'string'</span>, <span class="co"># abstract of the paper </span></span>
+<span id="cb23-50"><a href="#cb23-50" aria-hidden="true" tabindex="-1"></a>        <span class="st">'F'</span>: [<span class="st">'perceived usefulness'</span>], <span class="co"># factors significant in the study, broken into F1-F9 </span></span>
+<span id="cb23-51"><a href="#cb23-51" aria-hidden="true" tabindex="-1"></a>        <span class="st">'FN'</span>: [<span class="st">'another factor'</span>], <span class="co"># factors not significant in the study, broken into FNS1-FNS4 </span></span>
+<span id="cb23-52"><a href="#cb23-52" aria-hidden="true" tabindex="-1"></a>        <span class="st">'limit'</span>: [<span class="st">'geographical context'</span>], <span class="co"># limitations of the study, broken into LIMIT1-LIMIT3 </span></span>
+<span id="cb23-53"><a href="#cb23-53" aria-hidden="true" tabindex="-1"></a>        <span class="st">'typeofResearch'</span>: <span class="st">'string'</span>, <span class="co"># type of research conducted in the study </span></span>
+<span id="cb23-54"><a href="#cb23-54" aria-hidden="true" tabindex="-1"></a>        <span class="st">'methods'</span>: [<span class="st">'regression analysis'</span>], <span class="co"># methods used in the study, broken into METHOD1-METHOD4</span></span>
+<span id="cb23-55"><a href="#cb23-55" aria-hidden="true" tabindex="-1"></a>        <span class="st">'theory'</span>: [<span class="st">'TAM'</span>] <span class="co"># theories used in the study, broken into THEORY1-THEORY4</span></span>
+<span id="cb23-56"><a href="#cb23-56" aria-hidden="true" tabindex="-1"></a>        <span class="st">'sampleSize'</span>: <span class="dv">100</span>, <span class="co"># sample size of the study </span></span>
+<span id="cb23-57"><a href="#cb23-57" aria-hidden="true" tabindex="-1"></a>        <span class="st">'tech'</span>: <span class="st">'string'</span>, <span class="co"># main technology studied </span></span>
+<span id="cb23-58"><a href="#cb23-58" aria-hidden="true" tabindex="-1"></a>        <span class="st">'man_theme'</span>: <span class="st">'string'</span>, <span class="co"># Theme manually assigned by me </span></span>
+<span id="cb23-59"><a href="#cb23-59" aria-hidden="true" tabindex="-1"></a>        <span class="st">'algo_theme'</span>: <span class="st">'string'</span>, <span class="co"># Theme assigned by the algorithm </span></span>
+<span id="cb23-60"><a href="#cb23-60" aria-hidden="true" tabindex="-1"></a>        <span class="st">'decision_Theme'</span>: <span class="st">'string'</span>, <span class="co"># Final theme of the paper  </span></span>
+<span id="cb23-61"><a href="#cb23-61" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Score_Sig'</span>: <span class="fl">0.0</span>, <span class="co"># % of significance for factors </span></span>
+<span id="cb23-62"><a href="#cb23-62" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Score_NOT_Sig'</span>: <span class="fl">0.0</span>, <span class="co"># % of non-significance for factors</span></span>
+<span id="cb23-63"><a href="#cb23-63" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb23-64"><a href="#cb23-64" aria-hidden="true" tabindex="-1"></a>])</span>
+<span id="cb23-65"><a href="#cb23-65" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-66"><a href="#cb23-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-67"><a href="#cb23-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-68"><a href="#cb23-68" aria-hidden="true" tabindex="-1"></a><span class="fu">### Part 1.1 Finding Out Themes </span></span>
+<span id="cb23-69"><a href="#cb23-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-70"><a href="#cb23-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-71"><a href="#cb23-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-72"><a href="#cb23-72" aria-hidden="true" tabindex="-1"></a><span class="fu">## Part 2. Data Analysis </span></span>
+<span id="cb23-73"><a href="#cb23-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-74"><a href="#cb23-74" aria-hidden="true" tabindex="-1"></a><span class="fu">### Part 2.1 Data Cleaning and Prep </span></span>
+<span id="cb23-75"><a href="#cb23-75" aria-hidden="true" tabindex="-1"></a>The R libraries used for data analysis are as follows: </span>
+<span id="cb23-78"><a href="#cb23-78" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb23-79"><a href="#cb23-79" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb23-80"><a href="#cb23-80" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb23-81"><a href="#cb23-81" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
+<span id="cb23-82"><a href="#cb23-82" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(purrr)</span>
+<span id="cb23-83"><a href="#cb23-83" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb23-84"><a href="#cb23-84" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(psych)</span>
+<span id="cb23-85"><a href="#cb23-85" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb23-86"><a href="#cb23-86" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stargazer)</span>
+<span id="cb23-87"><a href="#cb23-87" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(forcats)</span>
+<span id="cb23-88"><a href="#cb23-88" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(xtable)</span>
+<span id="cb23-89"><a href="#cb23-89" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggraph)</span>
+<span id="cb23-90"><a href="#cb23-90" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(igraph)</span>
+<span id="cb23-91"><a href="#cb23-91" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
+<span id="cb23-92"><a href="#cb23-92" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggpubr)</span>
+<span id="cb23-93"><a href="#cb23-93" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-94"><a href="#cb23-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-95"><a href="#cb23-95" aria-hidden="true" tabindex="-1"></a>Looking at the data: </span>
+<span id="cb23-96"><a href="#cb23-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-99"><a href="#cb23-99" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb23-100"><a href="#cb23-100" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/P2_AR_07.csv"</span>) </span>
+<span id="cb23-101"><a href="#cb23-101" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(df)</span>
+<span id="cb23-102"><a href="#cb23-102" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-103"><a href="#cb23-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-106"><a href="#cb23-106" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb23-107"><a href="#cb23-107" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false </span></span>
+<span id="cb23-108"><a href="#cb23-108" aria-hidden="true" tabindex="-1"></a>og_copy <span class="ot">&lt;-</span> df</span>
+<span id="cb23-109"><a href="#cb23-109" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-110"><a href="#cb23-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-111"><a href="#cb23-111" aria-hidden="true" tabindex="-1"></a>Summary statiscs </span>
+<span id="cb23-112"><a href="#cb23-112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-115"><a href="#cb23-115" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb23-116"><a href="#cb23-116" aria-hidden="true" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">describe</span>(df <span class="sc">%&gt;%</span> </span>
+<span id="cb23-117"><a href="#cb23-117" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(Year, Match, Num_Factors, NUM_FAC_NOTSIG, SampleSize)) <span class="sc">%&gt;%</span> </span>
+<span id="cb23-118"><a href="#cb23-118" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(vars, n, mean, sd, median, min, max) </span>
+<span id="cb23-119"><a href="#cb23-119" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-120"><a href="#cb23-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-121"><a href="#cb23-121" aria-hidden="true" tabindex="-1"></a>Woah! One paper has 25,000 and that is messing up the sample sizes. Remembering this study's ID:</span>
+<span id="cb23-122"><a href="#cb23-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-125"><a href="#cb23-125" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb23-126"><a href="#cb23-126" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> <span class="fu">filter</span>(SampleSize <span class="sc">==</span> <span class="dv">25000</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb23-127"><a href="#cb23-127" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(ID, Title, SampleSize)</span>
+<span id="cb23-128"><a href="#cb23-128" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-129"><a href="#cb23-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-130"><a href="#cb23-130" aria-hidden="true" tabindex="-1"></a>Setting aside the study with sample size of 25,000:</span>
+<span id="cb23-133"><a href="#cb23-133" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb23-134"><a href="#cb23-134" aria-hidden="true" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">describe</span>(</span>
+<span id="cb23-135"><a href="#cb23-135" aria-hidden="true" tabindex="-1"></a>    df <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(Year, Match, Num_Factors, NUM_FAC_NOTSIG, SampleSize) <span class="sc">%&gt;%</span> </span>
+<span id="cb23-136"><a href="#cb23-136" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(SampleSize <span class="sc">!=</span> <span class="dv">25000</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb23-137"><a href="#cb23-137" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(vars, n, mean, sd, median, min, max) </span>
+<span id="cb23-138"><a href="#cb23-138" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-139"><a href="#cb23-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-140"><a href="#cb23-140" aria-hidden="true" tabindex="-1"></a>Welp! Another large study.</span>
+<span id="cb23-141"><a href="#cb23-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-144"><a href="#cb23-144" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb23-145"><a href="#cb23-145" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> <span class="fu">filter</span>(SampleSize <span class="sc">==</span> <span class="dv">21526</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb23-146"><a href="#cb23-146" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(ID, Title, SampleSize)</span>
+<span id="cb23-147"><a href="#cb23-147" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-148"><a href="#cb23-148" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-149"><a href="#cb23-149" aria-hidden="true" tabindex="-1"></a>Setting aside the study with sample size of 25,000 and the one with 21,52 as they are outliers: </span>
+<span id="cb23-152"><a href="#cb23-152" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb23-153"><a href="#cb23-153" aria-hidden="true" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">describe</span>(</span>
+<span id="cb23-154"><a href="#cb23-154" aria-hidden="true" tabindex="-1"></a>    df <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="sc">!</span>ID <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">'p2_59'</span>,<span class="st">'p2_77'</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb23-155"><a href="#cb23-155" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(ID, Year,Match, Num_Factors, NUM_FAC_NOTSIG, SampleSize)) <span class="sc">%&gt;%</span> </span>
+<span id="cb23-156"><a href="#cb23-156" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(vars, n, mean, sd, median, min, max) </span>
+<span id="cb23-157"><a href="#cb23-157" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-158"><a href="#cb23-158" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-159"><a href="#cb23-159" aria-hidden="true" tabindex="-1"></a>Counting the unique values for each of the columns: </span>
+<span id="cb23-162"><a href="#cb23-162" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb23-163"><a href="#cb23-163" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb23-164"><a href="#cb23-164" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste</span>(<span class="st">'Number of Unique Values in ID: '</span>, <span class="fu">n_distinct</span>(df<span class="sc">$</span>ID)),</span>
+<span id="cb23-165"><a href="#cb23-165" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste</span>(<span class="st">'Number of Unique Values in Title: '</span>, <span class="fu">n_distinct</span>(df<span class="sc">$</span>Title)),</span>
+<span id="cb23-166"><a href="#cb23-166" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste</span>(<span class="st">'Number of Unique Values in PublicationTitles: '</span>, <span class="fu">n_distinct</span>(df<span class="sc">$</span>PublicationTitle)),</span>
+<span id="cb23-167"><a href="#cb23-167" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste</span>(<span class="st">'Number of Unique Values in Publisher: '</span>, <span class="fu">n_distinct</span>(df<span class="sc">$</span>Publisher)),</span>
+<span id="cb23-168"><a href="#cb23-168" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste</span>(<span class="st">'Number of Unique Values in AffiliationCountry: '</span>, <span class="fu">n_distinct</span>(df<span class="sc">$</span>AffiliationCountry)),</span>
+<span id="cb23-169"><a href="#cb23-169" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste</span>(<span class="st">'Number of Unique Values in Factors: '</span>, dplyr<span class="sc">::</span><span class="fu">n_distinct</span>(df <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(F1<span class="sc">:</span>F9) <span class="sc">%&gt;%</span> <span class="fu">unlist</span>())),</span>
+<span id="cb23-170"><a href="#cb23-170" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste</span>(<span class="st">'Number of Unique Values in Not Sig: '</span>, dplyr<span class="sc">::</span><span class="fu">n_distinct</span>(df <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(FNS1<span class="sc">:</span>FNS4) <span class="sc">%&gt;%</span> <span class="fu">unlist</span>())),</span>
+<span id="cb23-171"><a href="#cb23-171" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste</span>(<span class="st">'Number of Unique Values in Methods: '</span>, dplyr<span class="sc">::</span><span class="fu">n_distinct</span>(df <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(METHOD1<span class="sc">:</span>METHOD4) <span class="sc">%&gt;%</span> <span class="fu">unlist</span>())),</span>
+<span id="cb23-172"><a href="#cb23-172" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste</span>(<span class="st">'Number of Unique Values in Theory: '</span>, dplyr<span class="sc">::</span><span class="fu">n_distinct</span>(df <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(THEORY1<span class="sc">:</span>THEORY4) <span class="sc">%&gt;%</span> <span class="fu">unlist</span>())),</span>
+<span id="cb23-173"><a href="#cb23-173" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste</span>(<span class="st">'Number of Unique Values in Limits: '</span>, dplyr<span class="sc">::</span><span class="fu">n_distinct</span>(df <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(LIMIT1<span class="sc">:</span>LIMIT3) <span class="sc">%&gt;%</span> <span class="fu">unlist</span>())),</span>
+<span id="cb23-174"><a href="#cb23-174" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste</span>(<span class="st">'Number of Unique Values in ResearchType: '</span>, <span class="fu">n_distinct</span>(df<span class="sc">$</span>ResearchType)),</span>
+<span id="cb23-175"><a href="#cb23-175" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste</span>(<span class="st">'Number of Unique Values in Authors: '</span>, <span class="fu">n_distinct</span>(df<span class="sc">$</span>Creators)),</span>
+<span id="cb23-176"><a href="#cb23-176" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste</span>(<span class="st">'Number of Unique Values in Keywords: '</span>, dplyr<span class="sc">::</span><span class="fu">n_distinct</span>(df <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(K1<span class="sc">:</span>K10) <span class="sc">%&gt;%</span> <span class="fu">unlist</span>())),</span>
+<span id="cb23-177"><a href="#cb23-177" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste</span>(<span class="st">'Number of Unique Values in Tech: '</span>, <span class="fu">n_distinct</span>(df<span class="sc">$</span>Tech)),</span>
+<span id="cb23-178"><a href="#cb23-178" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste</span>(<span class="st">'Number of Unique Values in Themes: '</span>, <span class="fu">n_distinct</span>(df<span class="sc">$</span>DecisionTheme))</span>
+<span id="cb23-179"><a href="#cb23-179" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb23-180"><a href="#cb23-180" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-181"><a href="#cb23-181" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(results, <span class="at">sep =</span> <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb23-182"><a href="#cb23-182" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-183"><a href="#cb23-183" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-184"><a href="#cb23-184" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-185"><a href="#cb23-185" aria-hidden="true" tabindex="-1"></a>Checking the sample sizes Without the outliers: </span>
+<span id="cb23-188"><a href="#cb23-188" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb23-189"><a href="#cb23-189" aria-hidden="true" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">describe</span>(</span>
+<span id="cb23-190"><a href="#cb23-190" aria-hidden="true" tabindex="-1"></a>    df <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="sc">!</span>ID <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">'p2_59'</span>,<span class="st">'p2_77'</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb23-191"><a href="#cb23-191" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(SampleSize)) <span class="sc">%&gt;%</span> </span>
+<span id="cb23-192"><a href="#cb23-192" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">select</span>(n, mean, sd, median, min, max) </span>
+<span id="cb23-193"><a href="#cb23-193" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-194"><a href="#cb23-194" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-197"><a href="#cb23-197" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb23-198"><a href="#cb23-198" aria-hidden="true" tabindex="-1"></a>noOutliers <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="sc">!</span>ID <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">'p2_59'</span>,<span class="st">'p2_77'</span>))</span>
+<span id="cb23-199"><a href="#cb23-199" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-200"><a href="#cb23-200" aria-hidden="true" tabindex="-1"></a>quantiles <span class="ot">&lt;-</span> <span class="fu">quantile</span>(noOutliers<span class="sc">$</span>SampleSize, <span class="at">na.rm =</span> T)</span>
+<span id="cb23-201"><a href="#cb23-201" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-202"><a href="#cb23-202" aria-hidden="true" tabindex="-1"></a>quantile_binned <span class="ot">&lt;-</span> <span class="fu">cut</span>(df<span class="sc">$</span>SampleSize, </span>
+<span id="cb23-203"><a href="#cb23-203" aria-hidden="true" tabindex="-1"></a>                <span class="at">breaks =</span> quantiles, </span>
+<span id="cb23-204"><a href="#cb23-204" aria-hidden="true" tabindex="-1"></a>                <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"SQ1"</span>, <span class="st">"SQ2"</span>, <span class="st">"SQ3"</span>, <span class="st">"SQ4"</span>), </span>
+<span id="cb23-205"><a href="#cb23-205" aria-hidden="true" tabindex="-1"></a>                <span class="at">include.lowest =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb23-206"><a href="#cb23-206" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-207"><a href="#cb23-207" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>SampleSizeBin <span class="ot">&lt;-</span> quantile_binned</span>
+<span id="cb23-208"><a href="#cb23-208" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-209"><a href="#cb23-209" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(</span>
+<span id="cb23-210"><a href="#cb23-210" aria-hidden="true" tabindex="-1"></a>    <span class="at">SampleSizeBin =</span> <span class="fu">if_else</span>(</span>
+<span id="cb23-211"><a href="#cb23-211" aria-hidden="true" tabindex="-1"></a>        <span class="fu">is.na</span>(SampleSizeBin),</span>
+<span id="cb23-212"><a href="#cb23-212" aria-hidden="true" tabindex="-1"></a>        <span class="st">"NotStated"</span>,</span>
+<span id="cb23-213"><a href="#cb23-213" aria-hidden="true" tabindex="-1"></a>        SampleSizeBin</span>
+<span id="cb23-214"><a href="#cb23-214" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb23-215"><a href="#cb23-215" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb23-216"><a href="#cb23-216" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-217"><a href="#cb23-217" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> <span class="fu">count</span>(SampleSizeBin)</span>
+<span id="cb23-218"><a href="#cb23-218" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-219"><a href="#cb23-219" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-220"><a href="#cb23-220" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-221"><a href="#cb23-221" aria-hidden="true" tabindex="-1"></a><span class="fu">### Part 2.2 Data Analysis</span></span>
+<span id="cb23-222"><a href="#cb23-222" aria-hidden="true" tabindex="-1"></a>Now let's actually do some analysis. </span>
+<span id="cb23-223"><a href="#cb23-223" aria-hidden="true" tabindex="-1"></a>Let's visualize how the themes of the papers have changed across the years. </span>
+<span id="cb23-224"><a href="#cb23-224" aria-hidden="true" tabindex="-1"></a>I will first generate a bar plot that fills the bars at each year (as a categorical factor) with proportions of themes in that year. </span>
+<span id="cb23-225"><a href="#cb23-225" aria-hidden="true" tabindex="-1"></a>This is an aggregation that happens under the hood, and using <span class="in">`position = "fill"`</span> will actually make sure all the bars consider things relative to eachother, filling the full 100% of the bar. </span>
+<span id="cb23-226"><a href="#cb23-226" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-229"><a href="#cb23-229" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb23-230"><a href="#cb23-230" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">as.factor</span>(Year), <span class="at">fill =</span> DecisionTheme)) <span class="sc">+</span></span>
+<span id="cb23-231"><a href="#cb23-231" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>) <span class="sc">+</span></span>
+<span id="cb23-232"><a href="#cb23-232" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb23-233"><a href="#cb23-233" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">fill =</span> <span class="st">"Theme"</span>,</span>
+<span id="cb23-234"><a href="#cb23-234" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Year"</span>,</span>
+<span id="cb23-235"><a href="#cb23-235" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Total Count"</span>) <span class="sc">+</span></span>
+<span id="cb23-236"><a href="#cb23-236" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fill_palette</span>(<span class="st">"Set3"</span>)</span>
+<span id="cb23-237"><a href="#cb23-237" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-238"><a href="#cb23-238" aria-hidden="true" tabindex="-1"></a><span class="in">```</span> </span>
+<span id="cb23-239"><a href="#cb23-239" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-240"><a href="#cb23-240" aria-hidden="true" tabindex="-1"></a>To see how things move/flow over the years, a line chart is a great idea: </span>
+<span id="cb23-243"><a href="#cb23-243" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb23-244"><a href="#cb23-244" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
+<span id="cb23-245"><a href="#cb23-245" aria-hidden="true" tabindex="-1"></a>    dplyr<span class="sc">::</span><span class="fu">count</span>(DecisionTheme, Year) <span class="sc">%&gt;%</span></span>
+<span id="cb23-246"><a href="#cb23-246" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">as.factor</span>(Year), <span class="at">y =</span> n, <span class="at">color =</span> DecisionTheme, <span class="at">group =</span> DecisionTheme)) <span class="sc">+</span></span>
+<span id="cb23-247"><a href="#cb23-247" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb23-248"><a href="#cb23-248" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb23-249"><a href="#cb23-249" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb23-250"><a href="#cb23-250" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">fill =</span> <span class="st">"Theme"</span>,</span>
+<span id="cb23-251"><a href="#cb23-251" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Year"</span>,</span>
+<span id="cb23-252"><a href="#cb23-252" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Total Count"</span>) <span class="sc">+</span></span>
+<span id="cb23-253"><a href="#cb23-253" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fill_palette</span>(<span class="st">"Dark2"</span>)</span>
+<span id="cb23-254"><a href="#cb23-254" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-255"><a href="#cb23-255" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-256"><a href="#cb23-256" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-257"><a href="#cb23-257" aria-hidden="true" tabindex="-1"></a><span class="fu">## Part 3. Results </span></span>
+<span id="cb23-258"><a href="#cb23-258" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-259"><a href="#cb23-259" aria-hidden="true" tabindex="-1"></a></span>
+</code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
 
 
