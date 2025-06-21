@@ -1,0 +1,453 @@
+---
+title: "Algorithmic Approach to Finding Themes" 
+author: "Yekta Amirkhalili"
+date: "today"
+format: 
+  html: 
+    code-fold: false
+    code-tools: true
+    self-contained: false
+    execute:
+      eval: false 
+      echo: true
+      warning: false
+      message: false
+      error: false
+      results: 'asis'
+    #css: style.css
+---
+<!-- CSS CHANGES -->
+<style>
+.quarto-title h1.title {
+  font-size: 1.5rem; 
+}
+
+h2{
+    font-size: 1.2rem;
+    background-color:rgba(128, 170, 156, 0.48);
+}
+
+.future-idea-box {
+  border: 2px solid var(--quarto-hl-header-color, #86bdab); /* Uses Quarto header color variable or fallback */
+  border-radius: 8px;
+  padding: 1em;
+  margin: 1em 0;
+  background: #f9f9fc;
+}
+.future-idea-title {
+  font-weight: bold;
+  color: var(--quarto-hl-header-color,rgb(111, 172, 152));
+  margin-bottom: 0.5em;
+  font-size: 1.1em;
+}
+
+</style>
+<!-- CSS CHANGES -->
+
+```{r}
+#| echo: false 
+##library(tidyverse)
+library(corrr)
+library(psych)
+library(lavaan)
+#library(kableExtra)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(survey)
+library(haven)
+library(rempsyc)
+library(broom)
+library(report)
+library(effectsize)
+library(aod)
+library(readr)
+#library(tidymodels)
+library(stargazer)
+library(forcats)
+library(ggcorrplot)
+library(caret)
+library(knitr)
+library(ROCR)
+library(jtools)
+#=library(car)
+library(xtable)
+#library(texreg)
+#library(svyVGAM)
+library(glmnet)
+library(ggpubr)
+library(lme4)
+library(nlme)
+library(weights)
+library(miscTools)
+library(systemfit)
+library(multcomp)
+require(ggplot2)
+require(GGally)
+require(reshape2)
+#require(compiler)
+#require(parallel)
+#require(boot)
+require(lattice)
+library(HLMdiag)
+#library(DHARMa)
+library(car) #for the Levene test which we will not discuss here
+library(Matrix)
+library(brms)
+library(margins)
+library(performance)
+library(ggnewscale)
+library(ggeffects)
+library(bayestestR) # for hypothesis testing
+library(brmsmargins)
+library(ggeffects)
+library(marginaleffects)
+library(effects)
+library(margins)
+library(modelr)
+library(plm)
+library(effectsize)
+library(aod)
+library(readr)
+library(tidymodels)
+library(stargazer)
+library(forcats)
+library(ggcorrplot)
+library(caret)
+library(knitr)
+library(ROCR)
+library(jtools)
+#=library(car)
+library(xtable)
+#library(texreg)
+#library(svyVGAM)
+library(glmnet)
+library(ggpubr)
+library(foreign)
+library(AER)
+library(lme4)
+library(brms)
+library(glmnet)
+library(ggpubr)
+library(formatR)
+library(pglm)
+library(acqr)
+```
+
+
+```{r}
+ds20 <- read_dta("data/cius2020_2022nov18_en.dta")
+ds <- ds20
+
+```
+
+Select only those who use smartphones: 
+```{r}
+ds <- ds %>% 
+    mutate(
+        devSM = case_when(
+        dv_010a == 1 ~ 1, #yes
+        dv_010a == 2 ~ 0, #no
+        .default = -1, #any valid skip and not stated 
+        )
+    )
+
+ds <- ds %>% 
+   filter(devSM == 1)
+```
+
+Size of the dataset: 
+```{r}
+dim(ds)
+```
+
+Drop the skipped rows:
+```{r}
+ds <- ds %>% filter(ui_050d < 3)
+ds <- ds %>% filter(g_edu < 5)
+ds <- ds %>% filter(ui_010c < 8)
+ds <- ds %>% filter(sm_030a < 97)
+ds <- ds %>% filter(ts_010a < 8)
+ds <- ds %>% filter(ts_010b < 8)
+ds <- ds %>% filter(fd_030a < 8)
+```
+
+```{r}
+ds <- ds %>%
+    mutate(
+        #timeline : past 3 months 
+        mBanking = case_when(
+            ui_050d == 1 ~ 1, 
+            ui_050d == 2 ~ 0,
+            .default = -1
+        ),
+        
+        phoneCheck = case_when(
+            sm_030a == 1 ~ 6,
+            sm_030a == 2 ~ 5,
+            sm_030a == 3 ~ 4,
+            sm_030a == 4 ~ 3,
+            sm_030a == 5 ~ 2, 
+            sm_030a == 6 ~ 1,
+            .default = 96
+        )
+    )
+
+ds %>% count(mBanking)
+
+```
+
+
+```{r}
+ds <- ds %>% filter(phoneCheck < 10)
+```
+
+```{r}
+ds <- ds %>% mutate(
+    rel_frnd_sat = case_when(
+        ts_010a == 1 ~ 1, #completely dissatisfied 
+        ts_010a == 2 ~ 2, 
+        ts_010a == 3 ~ 3,
+        ts_010a == 4 ~ 4,
+        ts_010a == 5 ~ 5, #completely satisfied 
+        .default = 90
+    ),
+    
+    rel_fam_sat = case_when(
+        ts_010b == 1 ~ 1, #completely dissatisfied 
+        ts_010b == 2 ~ 2, 
+        ts_010b == 3 ~ 3,
+        ts_010b == 4 ~ 4,
+        ts_010b == 5 ~ 5, #completely satisfied 
+        .default = 90
+    ),
+    
+    mental_health = case_when(
+        fd_030a == 1 ~ 5, #excellent 
+        fd_030a == 2 ~ 4, 
+        fd_030a == 3 ~ 3,
+        fd_030a == 4 ~ 2,
+        fd_030a == 5 ~ 1, #poor
+        .default = 90
+    )
+)
+
+
+```
+
+
+```{r}
+ds <- ds %>% filter(mental_health < 15)
+ds <- ds %>% filter(rel_frnd_sat < 15)
+ds <- ds %>% filter(rel_fam_sat < 15)
+```
+
+
+```{r}
+ds <- ds %>% mutate(
+    id = pumfid,
+    province = province, 
+    AGE = age_grp,
+    SEX = gender,
+    EMP = emp,
+    EDU = g_edu,
+    FAM = g_hcomp, #type of family: children under 18 
+    IMM = imm_gsta,
+    INC = hincquin
+    
+)
+```
+
+```{r}
+ds <- ds %>% filter(EMP < 3)
+ds <- ds %>% filter(FAM < 5)
+ds <- ds %>% filter(IMM < 3)
+```
+
+
+```{r}
+ds <- ds %>% mutate(
+    SNS = case_when(
+        ui_010c == 1 ~ 1,
+        ui_010c == 2 ~ 0
+    )
+    
+)
+```
+
+
+```{r}
+ds <- rename(ds, 
+       MH = mental_health, 
+       FAMSAT = rel_fam_sat,
+       FRISAT = rel_frnd_sat,
+       SD = phoneCheck
+       )
+
+ds <- ds %>% filter(MH < 10)
+ds <- ds %>% filter(FAMSAT < 10)
+ds <- ds %>% filter(FRISAT < 10)
+ds <- ds %>% filter(SD < 10)
+```
+
+```{r}
+ds <- ds %>% 
+    dplyr::select(id, 
+                  mBanking, SD, FAMSAT, FRISAT, MH, SNS,
+                  province, AGE, SEX, LAN, EMP, EDU,
+                  FAM, IMM, INC, wtpg)
+                  
+                  
+```
+
+# EXPLORING DATA 
+
+## SCREENING 
+```{r}
+ggplot(ds, aes(x = MH, y = as.factor(mBanking))) + 
+    geom_boxplot(
+        outlier.colour = "red",
+        outlier.shape = 16,
+        outlier.size = 2,
+        notch = F
+    )
+```
+
+Descriptive statistics:
+```{r}
+ds <- ds %>% 
+    mutate(
+        id = as.factor(id),
+        MB_f = as.factor(mBanking),
+        SNS_f = as.factor(SNS),
+        province_f = as.factor(province),
+        AGE = as.integer(AGE), 
+        EDU_f = as.factor(EDU),
+        FAM_f = as.factor(FAM),
+        INC_f = as.factor(INC),
+        SEX_f = as.factor(SEX),
+        EMP_f = as.factor(EMP),
+        IMM_f = as.factor(IMM),
+        SEX_f = fct_recode(
+            SEX_f,
+            "0" = "2",
+            "1" = "1"
+        ),
+        EMP_f = fct_recode(
+            EMP_f,
+            "0" = "2",
+            "1" = "1"
+        ),
+        IMM_f = fct_recode(
+            IMM_f,
+            "0" = "2",
+            "1" = "1" 
+        ),
+        
+        NUM_SEX = as.integer(SEX_f),
+        NUM_SEX = ifelse(
+            NUM_SEX == 2,
+            1,
+            0
+        ),
+        NUM_EMP = as.integer(EMP_f),
+        NUM_EMP = ifelse(
+            NUM_EMP == 1,
+            1,
+            0
+        ),
+        NUM_IMM = as.integer(IMM_f),
+        NUM_IMM = ifelse(
+            NUM_IMM == 1,
+            1,
+            0
+        ),
+    )
+```
+
+```{r}
+dsrb <- psych::describe(ds %>% dplyr::select(
+    mBanking, SD, FAMSAT, FRISAT, MH, SNS, AGE, NUM_SEX, NUM_EMP, EDU, FAM, NUM_IMM, INC
+), type = 2)
+
+```
+
+```{r}
+dsrb
+```
+
+
+```{r}
+ggplot(data    = ds,
+       aes(x   = SD,
+           y   = wtpg))+ 
+  geom_point()+ 
+  theme_minimal() 
+```
+
+
+Na's:
+```{r}
+sum(is.na(ds))
+```
+
+## RELATIONSHIPS: Visualizations, Contingency, Correlations
+
+Mental Health and Mbanking:
+
+```{r}
+ggplot(data = ds, aes(x = MH, y = wtpg)) +
+            geom_col(
+            aes(fill = as.factor(mBanking)), stat = "identity", color = "black", position = position_dodge(0.9)) +
+            fill_palette("Pastel1") + 
+            xlab("Mental Health") +
+            ylab("Frequencies") + labs(fill = "Mbanking")
+```
+
+
+MH and controls: AGE, SEX, EMP, EDU, FAM, IMM, INC
+
+```{r, fig.width=15, fig.height=10}
+gg_fam <- ggplot(data = ds , aes(MH, fill = as.factor(FAM))) + geom_bar(position = "fill") + labs(x = "Mental Health", y = "Percentage (fill)", fill = 'FAMILY') + fill_palette("Pastel1")
+
+gg_age <- ggplot(data = ds , aes(MH, fill = as.factor(AGE))) + geom_bar(position = "fill") + labs(x = "Mental Health", y = "Percentage (fill)", fill = 'AGE') + fill_palette("Pastel1")
+
+gg_edu <- ggplot(data = ds , aes(MH, fill = as.factor(EDU))) + geom_bar(position = "fill") + labs(x = "Mental Health", y = "Percentage (fill)", fill = 'EDU') + fill_palette("Pastel1")
+
+gg_inc <- ggplot(data = ds , aes(MH, fill = as.factor(INC))) + geom_bar(position = "fill") + labs(x = "Mental Health", y = "Percentage (fill)", fill = 'INC') + fill_palette("Pastel1")
+
+gg_sex <- ggplot(data = ds , aes(MH, fill = as.factor(SEX))) + geom_bar(position = "fill") + labs(x = "Mental Health", y = "Percentage (fill)", fill = 'SEX') + fill_palette("Pastel1")
+
+gg_emp <- ggplot(data = ds , aes(MH, fill = as.factor(EMP))) + geom_bar(position = "fill") + labs(x = "Mental Health", y = "Percentage (fill)", fill = 'EMP') + fill_palette("Pastel1")
+
+gg_imm <- ggplot(data = ds , aes(MH, fill = as.factor(IMM))) + geom_bar(position = "fill") + labs(x = "Mental Health", y = "Percentage (fill)", fill = 'Immigrant') + fill_palette("Pastel1")
+
+
+ggarrange(
+    gg_fam, gg_age, gg_edu, gg_inc, gg_sex, gg_emp, gg_imm,
+    labels = c("FAM", "AGE", "EDU", "INC", "SEX", "EMP", "IMM"),
+    ncol = 3,
+    nrow = 3
+    
+) 
+```
+
+MH and other variables:  SD, FAMSAT, FRISAT, SNS 
+
+```{r, fig.width=15, fig.height=10}
+gg_frisat <- ggplot(data = ds , aes(MH, fill = as.factor(FRISAT))) + geom_bar(position = "fill") + labs(x = "Mental Health", y = "Percentage (fill)", fill = 'FRISAT') + fill_palette("Pastel1")
+
+gg_famsat <- ggplot(data = ds , aes(MH, fill = as.factor(FAMSAT))) + geom_bar(position = "fill") + labs(x = "Mental Health", y = "Percentage (fill)", fill = 'FAMSAT') + fill_palette("Pastel1")
+
+gg_sd <- ggplot(data = ds , aes(MH, fill = as.factor(SD))) + geom_bar(position = "fill") + labs(x = "Mental Health", y = "Percentage (fill)", fill = 'SD') + fill_palette("Pastel1")
+
+gg_sns <- ggplot(data = ds , aes(MH, fill = as.factor(SNS))) + geom_bar(position = "fill") + labs(x = "Mental Health", y = "Percentage (fill)", fill = 'SNS') + fill_palette("Pastel1")
+
+ggarrange(
+    gg_frisat, gg_famsat, gg_sd, gg_sns,
+    labels = c("FRISAT", "FAMSAT", "SD", "SNS"),
+    ncol = 2,
+    nrow = 2
+    
+) #gg3, gg4, ncol = 2, nrow = 2)
+```

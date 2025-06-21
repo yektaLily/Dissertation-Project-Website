@@ -1,0 +1,46 @@
+---
+title: "" 
+author: "Yekta Amirkhalili"
+date: "today"
+format: 
+  html: 
+    code-fold: false
+    code-tools: true
+    self-contained: false
+    execute:
+      eval: false 
+      echo: true
+      warning: false
+      message: false
+      error: false
+      results: 'asis'
+    #css: style.css
+---
+<!-- CSS CHANGES -->
+<style>
+.quarto-title h1.title {
+  font-size: 1.5rem; 
+}
+
+h2{
+    font-size: 1.2rem;
+    background-color:rgba(128, 170, 156, 0.48);
+}
+
+.future-idea-box {
+  border: 2px solid var(--quarto-hl-header-color, #86bdab); /* Uses Quarto header color variable or fallback */
+  border-radius: 8px;
+  padding: 1em;
+  margin: 1em 0;
+  background: #f9f9fc;
+}
+.future-idea-title {
+  font-weight: bold;
+  color: var(--quarto-hl-header-color,rgb(111, 172, 152));
+  margin-bottom: 0.5em;
+  font-size: 1.1em;
+}
+
+</style>
+<!-- CSS CHANGES -->
+
